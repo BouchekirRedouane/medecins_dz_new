@@ -15,6 +15,18 @@ class FicheDoctor extends StatefulWidget {
 }
 
 class _FicheDoctorState extends State<FicheDoctor> {
+
+  var _colorPrefredMedecin;
+
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    _colorPrefredMedecin= Colors.white;
+    super.initState();
+  }
+
+  
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -25,9 +37,11 @@ class _FicheDoctorState extends State<FicheDoctor> {
           centerTitle: true,
           actions: <Widget>[
             IconButton(
-              icon: Icon(Icons.star),
+              icon: Icon(Icons.star, color: _colorPrefredMedecin,),
               onPressed: () {
-
+                setState(() {
+                  _colorPrefredMedecin = Colors.yellow;
+                });
               },
             ),
           ],

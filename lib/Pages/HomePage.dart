@@ -47,17 +47,17 @@ class _HomePageState extends State<HomePage> {
           index: 0,
           height: 50.0,
           items: <Widget>[
-            Icon(Icons.search, size: 30),
-            Icon(Icons.list, size: 30),
-            Icon(Icons.compare_arrows, size: 30),
-            Icon(Icons.call_split, size: 30),
-            Icon(Icons.perm_identity, size: 30),
+            Icon(Icons.search, size: 30, color: Colors.white,),
+            Icon(Icons.list, size: 30, color: Colors.white,),
+            Icon(Icons.compare_arrows, size: 30, color: Colors.white,),
+            Icon(Icons.call_split, size: 30, color: Colors.white,),
+            Icon(Icons.perm_identity, size: 30, color: Colors.white,),
           ],
           color: Colors.white,
-          buttonBackgroundColor: Colors.blue,
-          backgroundColor: Colors.grey[200],
+          buttonBackgroundColor: Colors.black,
+          backgroundColor: Colors.yellow,
           animationCurve: Curves.easeInOut,
-          animationDuration: Duration(milliseconds: 300),
+          animationDuration: Duration(milliseconds: 400),
           onTap: (index) {
             setState(() {
               _currentIndex = index;

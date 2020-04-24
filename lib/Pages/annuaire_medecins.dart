@@ -33,7 +33,7 @@ class annuaire_medecinsState extends State<annuaire_medecins> {
         _printDoctorDetails(medecin);
       },
       child: Container(
-          height: 130,
+          height: 150,
           margin: EdgeInsets.all(10.0),
           decoration: BoxDecoration(
             gradient: LinearGradient(colors: [
@@ -138,21 +138,16 @@ class annuaire_medecinsState extends State<annuaire_medecins> {
                             size: 20,
                           ),
                           Container(
-                            width: 150,
                             child: Text(
                               medecin.numeroTel,
                               overflow: TextOverflow.ellipsis,
-                              maxLines: 5,
+                              maxLines: 1,
                             ),
                           ),
                         ],
                       ),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      SizedBox(
-                        width: 100,
-                      ),
+
+
                     ],
                   )),
             ],
