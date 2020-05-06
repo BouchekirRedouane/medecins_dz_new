@@ -34,8 +34,8 @@ class LogoPageState extends State<LogoPage>{
                 begin: Alignment.topCenter,
                 end : Alignment.bottomCenter,
                 colors: [
-                  Colors.deepPurple[600],
-                  Colors.deepPurple[600],
+                  Colors.indigo[900],
+                  Colors.indigo[900],
                   //Colors.blue[300],
                 ]
             )
@@ -47,25 +47,24 @@ class LogoPageState extends State<LogoPage>{
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
 
-              new SizedBox(
-                width:150,
-                child: new Image.asset('images/doctor.png'),
-              ),
+             new SizedBox(
+               child:  new Image.asset('images/logo.png',),
+             ),
 
               new SizedBox(
                 height: 30,
               ),
               new Text(
-                'MED',
-                style: TextStyle(color: Colors.deepOrange, fontSize: 35, fontFamily: 'Righteous', letterSpacing: 5.0 ),
+                'SihatiDz',
+                style: TextStyle(color: Colors.yellow, fontSize: 35, fontFamily: 'Righteous', letterSpacing: 5.0 ),
               ),
 
               new Text(
-                'Medécins El Djazair',
-                style: TextStyle(color: Colors.white, fontSize: 35, fontFamily: 'Righteous' ),
+                'Trouver un médecin en Algérie en toute facilité',
+                style: TextStyle(color: Colors.white, fontSize: 15, fontFamily: 'Righteous' ),
               ),
             ],
-          )
+          ),
         ),
       ),
     );

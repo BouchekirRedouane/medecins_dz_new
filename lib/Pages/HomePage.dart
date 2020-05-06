@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:medecins_dz/Pages/annuaire_medecins.dart';
@@ -47,15 +49,15 @@ class _HomePageState extends State<HomePage> {
           index: 0,
           height: 50.0,
           items: <Widget>[
-            Icon(Icons.search, size: 30, color: Colors.white,),
-            Icon(Icons.list, size: 30, color: Colors.white,),
-            Icon(Icons.compare_arrows, size: 30, color: Colors.white,),
-            Icon(Icons.call_split, size: 30, color: Colors.white,),
-            Icon(Icons.perm_identity, size: 30, color: Colors.white,),
+            Icon(Icons.search, size: 30, color: Colors.blue[300],),
+            Icon(Icons.list, size: 30, color: Colors.blue[300],),
+            Icon(Icons.compare_arrows, size: 30, color: Colors.blue[300],),
+            Icon(Icons.call_split, size: 30, color: Colors.blue[300],),
+            Icon(Icons.perm_identity, size: 30, color: Colors.blue[300],),
           ],
           color: Colors.white,
-          buttonBackgroundColor: Colors.black,
-          backgroundColor: Colors.yellow,
+          buttonBackgroundColor: Colors.indigo[900],
+          backgroundColor: Colors.grey[200],
           animationCurve: Curves.easeInOut,
           animationDuration: Duration(milliseconds: 400),
           onTap: (index) {
@@ -67,7 +69,7 @@ class _HomePageState extends State<HomePage> {
 
         appBar: AppBar(
           elevation: 10,
-          backgroundColor: Colors.blue[400],
+          backgroundColor: Colors.indigo[900],
           title: tabs_titles[_currentIndex],
           centerTitle: true,
         ),
@@ -77,6 +79,56 @@ class _HomePageState extends State<HomePage> {
           bucket: bucket,
         ),
 
+      drawer: Theme(
+          data: Theme.of(context).copyWith(canvasColor: Colors.transparent),
+          child: sideNav()
+      ),
+
     );
   }
+}
+
+
+
+Drawer sideNav() {
+  return Drawer(
+      child: Stack(
+          children: <Widget>[
+            //first child be the blur background
+            BackdropFilter(
+                filter: ImageFilter.blur(sigmaX: 5.0, sigmaY: 5.0),
+                //this is dependent on the import statment above
+                child: Container(
+                    decoration: BoxDecoration(
+                        color: Colors.grey.withOpacity(0.5))
+                )
+            ),
+
+            ListView(
+              padding: EdgeInsets.zero,
+              children: <Widget>[
+                DrawerHeader(
+                    child: Text('Hello Drawer Title')
+                ),
+
+                new Divider(color: Colors.white,),
+                ListTile(
+                  leading: Icon(Icons.exit_to_app, color: Colors.red),
+                  title: new Text(
+                    'Logout',
+                    style: TextStyle(color: Colors.red, fontSize: 20, fontWeight: FontWeight.w600),
+                  ),
+                  onTap: (){
+
+                  },
+                ),
+
+                new Divider(color: Colors.white,),
+
+              ],
+            )
+
+          ]
+      )
+  );
 }
